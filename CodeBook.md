@@ -1,5 +1,24 @@
 ## CodeBook
 
+## Summary
+This CodeBook describes the code found in the run_analysis.R file.  The run_analysis.R file
+reads data from a download folder containing data regarding activities performed by each subject.
+
+## Approach
+It is assumed that data has already been downloaded to a folder in the workign directory
+called "UCI HAR Dataset"
+
+The files are read into R and combined.  Columns are named per the features file and the 
+data is subsetted by the mean and standard deviation measures.  Descriptive variable names
+are assigned.
+
+The data is tidied by melting the feature vector to transform the data into the long form.  
+The feature variable is then split into multiple rows using grepl.  Data is reordered so 
+the values are at the end.  Means of the measurements are taken.
+
+Data is written to a text file in the working directory.
+
+
 ## The Tidy Dataset
 ```
 ##    subject activity domain    instrument acceleration jerk magnitude axis
@@ -52,3 +71,5 @@ Classes ‘data.table’ and 'data.frame':	11880 obs. of  11 variables:
  - attr(*, "sorted")= chr  "subject" "activity" "domain" "instrument" ...
  - attr(*, ".internal.selfref")=<externalptr> 
 ```
+
+## Approach
